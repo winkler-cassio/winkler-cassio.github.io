@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <link rel="icon" type="image/x-icon" href="https://raw.githubusercontent.com/webcwinkler/site/refs/heads/main/favicon.ico">
+  <title>Cássio Winkler - Profissional de TI</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- SEO -->
+  <meta name="description" content="Cássio Winkler - Especialista em Tecnologia da Informação">
+  <meta name="keywords" content="Cássio Winkler, TI, Tecnologia da Informação, Desenvolvimento, Infraestrutura, Consultoria">
+  <meta name="author" content="Cássio Winkler">
+  <meta name="robots" content="index, follow">
+  <meta http-equiv="refresh" content="1296000">
+
+  <!-- Bootstrap -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <style>
+    html, body {
+      height: 100%;
+      margin: 0;
+      padding: 0;
+      overflow: hidden;
+      font-family: 'Segoe UI', sans-serif;
+      background: linear-gradient(to right, #0d47a1, #1e1e1e);
+      color: #fff;
+    }
+
+    .container-main {
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      padding: 20px;
+    }
+
+    header h1 {
+      font-size: 3rem;
+      font-weight: bold;
+    }
+
+    header p {
+      font-size: 1.2rem;
+      color: #ccc;
+      margin-bottom: 40px;
+    }
+
+    form {
+      width: 100%;
+      max-width: 1000px;
+      background: rgba(255, 255, 255, 0.05);
+      padding: 30px;
+      border-radius: 10px;
+      box-shadow: 0 0 20px rgba(0,0,0,0.3);
+      text-align: left;
+    }
+
+    .form-label {
+      color: #ddd;
+      font-weight: 500;
+      margin-bottom: 4px;
+    }
+
+    .form-control {
+      background-color: #222;
+      border: 1px solid #444;
+      color: #fff;
+    }
+
+    .form-control:focus {
+      background-color: #333;
+      color: #fff;
+      border-color: #007bff;
+    }
+
+    .btn-primary {
+      background-color: #007bff;
+      border: none;
+    }
+
+    .btn-primary:hover {
+      background-color: #0056b3;
+    }
+
+    .whatsapp-button {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      z-index: 1000;
+    }
+
+    .whatsapp-button img {
+      width: 60px;
+      height: 60px;
+      cursor: pointer;
+      border-radius: 50%;
+      box-shadow: 0 0 10px rgba(0,0,0,0.3);
+    }
+
+    .qr-popup {
+      display: none;
+      position: fixed;
+      bottom: 90px;
+      right: 20px;
+      background: #fff;
+      padding: 10px;
+      border-radius: 10px;
+      z-index: 1001;
+      box-shadow: 0 0 15px rgba(0,0,0,0.4);
+    }
+
+    .qr-popup img {
+      width: 150px;
+      height: 150px;
+    }
+
+    footer {
+      font-size: 0.85rem;
+      color: #ccc;
+      margin-top: 20px;
+    }
+
+    @media (max-width: 768px) {
+      header h1 {
+        font-size: 2rem;
+      }
+
+      form {
+        padding: 20px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container-main">
+    <header>
+      <h1>Cássio Winkler</h1>
+      <p>Soluções em Tecnologia da Informação</p>
+    </header>
+
+    <form action="https://formspree.io/f/xanjogrv" method="POST">
+      <div class="row g-3">
+        <div class="col-md-6">
+          <div class="mb-2">
+            <label class="form-label" for="name">Nome</label>
+            <input type="text" name="name" id="name" class="form-control" required>
+          </div>
+          <div class="mb-2">
+            <label class="form-label" for="email">E-mail</label>
+            <input type="email" name="email" id="email" class="form-control" required>
+          </div>
+          <div class="mb-2">
+            <label class="form-label" for="phone">Telefone</label>
+            <input type="tel" name="phone" id="phone" class="form-control">
+          </div>
+        </div>
+        <div class="col-md-6 d-flex flex-column">
+          <div class="mb-2">
+            <label class="form-label" for="subject">Assunto</label>
+            <input type="text" name="subject" id="subject" class="form-control" required>
+          </div>
+          <div class="mb-2 flex-grow-1">
+            <label class="form-label" for="message">Mensagem</label>
+            <textarea name="message" id="message" class="form-control" rows="5" required style="height: 142px;"></textarea>
+          </div>
+        </div>
+      </div>
+      <div class="text-center mt-3">
+        <button type="submit" class="btn btn-primary px-5">Enviar</button>
+      </div>
+    </form>
+
+    <footer class="mt-4">
+      &copy; 2025 Cássio Winkler. Todos os direitos reservados.
+    </footer>
+  </div>
+<!-- Botão WhatsApp -->
+<div class="whatsapp-button">
+  <img src="https://upload.wikimedia.org/wikipedia/commons/5/5e/WhatsApp_icon.png" alt="WhatsApp" onclick="toggleQR()">
+</div>
+
+<!-- QR Code personalizado -->
+<div class="qr-popup" id="qrPopup">
+  <img src="https://raw.githubusercontent.com/webcwinkler/site/refs/heads/main/cassio_vcard_qrcode.png" alt="Meu QR Code WhatsApp" width="150" height="150">
+</div>
+
+
+  <!-- Scripts -->
+  <script>
+    function toggleQR() {
+      const qr = document.getElementById("qrPopup");
+      qr.style.display = (qr.style.display === "block") ? "none" : "block";
+    }
+
+    // Bloqueios simples
+    document.addEventListener('contextmenu', e => e.preventDefault());
+    document.onkeydown = function(e) {
+      if (
+        e.keyCode === 123 ||
+        (e.ctrlKey && e.shiftKey && ['I', 'J', 'C'].includes(e.key.toUpperCase())) ||
+        (e.ctrlKey && e.key.toUpperCase() === 'U')
+      ) {
+        return false;
+      }
+    };
+  </script>
+</body>
+</html>
