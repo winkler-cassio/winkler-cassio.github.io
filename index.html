@@ -100,38 +100,6 @@
         background-color: #0056b3;
       }
 
-      .whatsapp-button {
-        position: fixed;
-        bottom: 20px;
-        right: 20px;
-        z-index: 1000;
-      }
-
-      .whatsapp-button img {
-        width: 60px;
-        height: 60px;
-        cursor: pointer;
-        border-radius: 50%;
-        box-shadow: 0 0 10px rgba(0,0,0,0.3);
-      }
-
-      .qr-popup {
-        display: none;
-        position: fixed;
-        bottom: 90px;
-        right: 20px;
-        background: #fff;
-        padding: 10px;
-        border-radius: 10px;
-        z-index: 1001;
-        box-shadow: 0 0 15px rgba(0,0,0,0.4);
-      }
-
-      .qr-popup img {
-        width: 150px;
-        height: 150px;
-      }
-
       footer {
         font-size: 0.85rem;
         color: #ccc;
@@ -157,16 +125,6 @@
         .qr-popup {
           right: 10px;
           bottom: 80px;
-        }
-
-        .whatsapp-button img {
-          width: 50px;
-          height: 50px;
-        }
-
-        .qr-popup img {
-          width: 120px;
-          height: 120px;
         }
       }
     </style>
@@ -215,23 +173,8 @@
       </footer>
     </div>
 
-    <!-- Botão WhatsApp -->
-    <div class="whatsapp-button">
-      <img src="https://upload.wikimedia.org/wikipedia/commons/5/5e/WhatsApp_icon.png" alt="WhatsApp" onclick="toggleQR()">
-    </div>
-
-    <!-- QR Code personalizado -->
-    <div class="qr-popup" id="qrPopup">
-      <img src="https://raw.githubusercontent.com/winkler-cassio/winkler-cassio.github.io/refs/heads/main/cassio_vcard_qrcode.png" alt="Meu QR Code WhatsApp">
-    </div>
-
     <!-- Scripts -->
     <script>
-      function toggleQR() {
-        const qr = document.getElementById("qrPopup");
-        qr.style.display = (qr.style.display === "block") ? "none" : "block";
-      }
-
       // Bloqueios simples
       document.addEventListener('contextmenu', e => e.preventDefault());
       document.onkeydown = function(e) {
