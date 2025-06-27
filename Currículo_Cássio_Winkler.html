@@ -24,7 +24,29 @@
 <body>
 <div class="container-fluid px-3 px-md-5">
 
-<div class="row justify-content-center"><h1 class="mb-1">Cássio Winkler</h1><p class="mb-4">Guarapuava/PR | <a href="https://wa.me/5542999835497?text=Ol%C3%A1%20C%C3%A1ssio%2C%20estava%20analisando%20seu%20curr%C3%ADculo%20e%20%5B...%5D" target="_blank">(42) 99983-5497</a> | <a href="mailto:winklercassio@gmail.com?subject=Contato%20sobre%20seu%20curr%C3%ADculo&body=Ol%C3%A1%20C%C3%A1ssio%2C%20estou%20entrando%20em%20contato%20ap%C3%B3s%20analisar%20seu%20curr%C3%ADculo.">winklercassio@gmail.com</a>
+<div class="row justify-content-center"><h1 class="mb-1">Cássio Winkler</h1><p class="mb-4">Guarapuava/PR | 
+   <script>
+  // Dados codificados em base64
+  const encodedPhone = 'NTU0Mjk5OTgzNTQ5Nw==';
+  const encodedEmail = 'd2lua2xlcmNhc3Npb0BnbWFpbC5jb20='; 
+  const encodedSubject = 'Q29udGF0byBzb2JyZSBzZXUgY3VycmljdWxv';
+  const encodedBody = 'T2zDoSBDw6Fzc2lvLCBlc3RvIGVudHJhbmRvIGVtIGNvbnRhdG8gYXBvcyBhbmFsaXphciBzZXUgY3VycmljdWxvLg==';
+
+  // Decodifica os dados
+  const phone = atob(encodedPhone);
+  const email = atob(encodedEmail);
+  const subject = atob(encodedSubject);
+  const body = atob(encodedBody);
+
+  // Gera os links
+  const whatsappURL = `https://wa.me/${phone}?text=${encodeURIComponent("Olá Cássio, estava analisando seu currículo e [...]")}`;
+  const mailtoURL = `mailto:${email}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+
+  // Escreve os links na página
+  document.write(`<a href="${whatsappURL}" target="_blank">Entre em contato via WhatsApp</a><br>`);
+  |;
+  document.write(`<a href="${mailtoURL}">Entre em contato via e-mail</a>`);
+</script>
 </p><div class="mb-4 col-12">
 <h2 class="section-title">Formação</h2>
 <ul>
@@ -114,5 +136,36 @@
         </div>`;
     });
   </script>
+    <script>
+  // Desativa botão direito
+  document.addEventListener('contextmenu', function (e) {
+    e.preventDefault();
+  });
+
+  // Desativa F12, Ctrl+Shift+I, Ctrl+Shift+J, Ctrl+U, etc.
+  document.addEventListener('keydown', function (e) {
+    // F12
+    if (e.key === "F12") {
+      e.preventDefault();
+    }
+
+    // Ctrl+Shift+I or Ctrl+Shift+J or Ctrl+U or Ctrl+S
+    if ((e.ctrlKey && e.shiftKey && (e.key === 'I' || e.key === 'J')) ||
+        (e.ctrlKey && (e.key === 'U' || e.key === 'S'))) {
+      e.preventDefault();
+    }
+  });
+
+  // Detecta devtools abertos (não confiável, mas pode assustar)
+  setInterval(function () {
+    const threshold = 160;
+    const widthDiff = window.outerWidth - window.innerWidth;
+    const heightDiff = window.outerHeight - window.innerHeight;
+
+    if (widthDiff > threshold || heightDiff > threshold) {
+      document.body.innerHTML = '<h1>Inspeção desativada</h1>';
+    }
+  }, 1000);
+</script>
 </body>
 </html>
